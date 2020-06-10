@@ -434,6 +434,7 @@ void sendmqtt()
   mac.writeAddress(writeaddr_eeprom2, (write_addeeprom >> 8) & 0xFF);
 
   checkandsendmqtt(sText, write_addeeprom);
+  
 }
 
 int checkandsendmqtt(String sdatamqtt, int write_addr)
@@ -467,7 +468,7 @@ int checkandsendmqtt(String sdatamqtt, int write_addr)
           datareceivedmqtt[0] = '\0';
           datareceivedmqtt[1] = '\0';
           checksendmqtt = 1;
-         
+          delay(10000);
         } else {
           
           Serial.println("******** Can't Send Server no reply OK (can't insert to database) ********");
